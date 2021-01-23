@@ -1,7 +1,7 @@
 close all;
 clear all;
 clc;
-import newtonraphson.NewtonRaphson;
+import numericalmethods.NewtonRaphson;
 initCondition = [1;4];
 iterationMax =10;
 tolerance = 0.0001;
