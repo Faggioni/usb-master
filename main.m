@@ -3,8 +3,7 @@ clear all;
 clc;
 import newtonraphson.NewtonRaphson;
 initCondition = [1;4];
-numberMaxOfIterations = 25;
+numberMaxOfIterations =10;
 tolerance = 0.0001;
 nr = NewtonRaphson(initCondition, numberMaxOfIterations,tolerance);
-sol = nr.solve();
-
+sol = nr.solveHomework(0);
