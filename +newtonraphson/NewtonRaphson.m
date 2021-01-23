@@ -21,6 +21,7 @@ classdef NewtonRaphson
             solution = 1;
         end
         function solution = solveHomework(obj, verbose)
+            import helpers.Logger;
             %NewtonRaphson Class
             %Solve First Homework
             x0 = obj.initCondition;
@@ -29,12 +30,12 @@ classdef NewtonRaphson
             k = 0;
             for k = 1:obj.numberMaxOfIterations
                 if(verbose)
-                    obj.log('iteration', k);
+                    Logger.log('iteration', k);
                 end
                 sol = obj.solveSingleIteration( xk );
                 xk1 = sol;
                 if(verbose)
-                    obj.log('xk1', xk1);
+                    Logger.log('xk1', xk1);
                 end
                 if(obj.shouldTerminateIterations(xk1, xk, k))
                     solution = xk1;
@@ -52,10 +53,6 @@ classdef NewtonRaphson
         end
         function isCompleted = shouldTerminateIterations(obj, xk1, xk, k)
             isCompleted = (( sqrt( ((xk1(1,1)-xk(1,1))^2) + ((xk1(2,1)-xk(2,1))^2) ) ) < obj.error) || (k >= obj.numberMaxOfIterations);
-        end
-        function log(obj, label, value)
-            disp(label);
-            disp(value);
         end
     end
 end
