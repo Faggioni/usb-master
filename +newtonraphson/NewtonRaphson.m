@@ -17,10 +17,12 @@ classdef NewtonRaphson
         
         function solution = solve(obj)
             %NewtonRaphson Class
-            %Solve First Homework
+            %Try to implement a general method using symbolic library
             solution = 1;
         end
         function solution = solveHomework(obj, verbose)
+            %NewtonRaphson Class
+            %Solve First Homework
             x0 = obj.initCondition;
             xk = x0;
             xk1 = 10 * x0;
